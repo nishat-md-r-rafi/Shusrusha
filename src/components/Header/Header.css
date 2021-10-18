@@ -1,0 +1,12 @@
+.link {
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.link:hover {
+  background-color: transparent;
+}
