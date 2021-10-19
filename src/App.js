@@ -12,6 +12,7 @@ import initializeAuthentication from "./Firebase/firebase.init";
 import NotFound from "./components/NotFound/NotFound";
 import Details from "./components/Details/Details";
 import AuthProvider from "./contexts/AuthProvider";
+import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 
 initializeAuthentication();
 function App() {
@@ -39,9 +40,9 @@ function App() {
             <Route path="/emergency">
               <Emergency></Emergency>
             </Route>
-            <Route path="/detail/:serviceId">
+            <PrivateRoute path="/detail/:serviceId">
               <Details></Details>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
