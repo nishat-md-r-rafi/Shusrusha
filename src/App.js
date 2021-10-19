@@ -8,7 +8,10 @@ import About from "./components/About/About";
 import Login from "./components/Login/Login";
 import Footer from "./components/Footer/Footer";
 import Emergency from "./components/Emergency/Emergency";
+import initializeAuthentication from "./Firebase/firebase.init";
+import NotFound from "./components/NotFound/NotFound";
 
+initializeAuthentication();
 function App() {
   return (
     <div className="App">
@@ -33,8 +36,10 @@ function App() {
           <Route path="/emergency">
             <Emergency></Emergency>
           </Route>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
         </Switch>
-        <Footer></Footer>
       </Router>
     </div>
   );

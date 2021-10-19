@@ -37,12 +37,10 @@ function Header(props) {
               <Link className="link" to="/emergency">
                 Emergency
               </Link>
-              <Button style={{ marginRight: "5px" }}>Login</Button>
+              <Link className="link" to="/login">
+                Login
+              </Link>
               <Button>Logout</Button>
-
-              <Nav.Link href="#" disabled>
-                Our Care is to make you feel happy!
-              </Nav.Link>
             </Nav>
             <Form className="d-flex">
               <FormControl
