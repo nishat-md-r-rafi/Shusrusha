@@ -9,6 +9,7 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { useState } from "react";
+import useAuth from "../../contexts/useAuth";
 
 function Login(props) {
   const googleProvider = new GoogleAuthProvider();
@@ -17,6 +18,7 @@ function Login(props) {
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { handleGoogleLogin, logOut } = useAuth();
 
   const emailChangeHandler = (e) => {
     setEmail(e.target.value);
@@ -24,23 +26,6 @@ function Login(props) {
   const passwordChangeHandler = (e) => {
     setPassword(e.target.value);
   };
-  const handleGoogleLogin = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        setUser(result.user);
-        const { displayName, email, photoURL } = result.user;
-        const loggedInUser = {
-          name: displayName,
-          email: email,
-          photo: photoURL,
-        };
-        setUser(loggedInUser);
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
-  };
-
   const handleRegistrations = (e) => {
     e.preventDefault();
     console.log(email, password);

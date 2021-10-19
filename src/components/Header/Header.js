@@ -10,9 +10,11 @@ import {
 } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
+import useAuth from "../../contexts/useAuth";
 import "./Header.css";
 
 function Header(props) {
+  const { user, logOut } = useAuth();
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -37,10 +39,14 @@ function Header(props) {
               <Link className="link" to="/emergency">
                 Emergency
               </Link>
-              <Link className="link" to="/login">
-                Login
-              </Link>
-              <Button>Logout</Button>
+
+              {user?.email ? (
+                <Button onClick={logOut}>Logout</Button>
+              ) : (
+                <Link className="link" to="/login">
+                  Login
+                </Link>
+              )}
             </Nav>
             <Form className="d-flex">
               <FormControl
@@ -53,6 +59,7 @@ function Header(props) {
             </Form>
           </Navbar.Collapse>
         </Container>
+        <h4>Signed In As:{user?.name}</h4>
       </Navbar>
     </div>
   );

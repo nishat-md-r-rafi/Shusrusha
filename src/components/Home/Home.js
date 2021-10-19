@@ -3,49 +3,55 @@ import { Carousel } from "react-bootstrap";
 
 function Home(props) {
   return (
-    <div>
-      <div>
+    <>
+      <div className="container">
         <Carousel>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=First slide&bg=373940"
+              style={{ width: "100%", height: "100" }}
+              src="https://image.freepik.com/free-vector/people-walking-sitting-hospital-building-city-clinic-glass-exterior-flat-vector-illustration-medical-help-emergency-architecture-healthcare-concept_74855-10130.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h2 style={{ color: "black" }}>24 Hospital</h2>
+              <h4 style={{ color: "black" }}>
+                We are ready to serve you 24 hours
+              </h4>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Second slide&bg=282c34"
+              src="https://image.freepik.com/free-vector/flat-hand-drawn-patient-taking-medical-examination_52683-57829.jpg"
               alt="Second slide"
             />
 
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h2 style={{ color: "black" }}>Dedicated Doctor</h2>
+              <h4 style={{ color: "black" }}>
+                We will try our best with our defecated doctor
+              </h4>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Third slide&bg=20232a"
+              style={{ width: "100%", height: "100%" }}
+              src="https://image.freepik.com/free-vector/emergency-isometric_1284-25291.jpg"
               alt="Third slide"
             />
 
             <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
+              <h2 style={{ color: "black" }}>Emergency</h2>
+              <h4 style={{ color: "black" }}>
+                We will be Available at your emergency
+              </h4>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
       </div>
-    </div>
+    </>
   );
 }
 
