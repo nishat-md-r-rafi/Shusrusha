@@ -33,15 +33,20 @@ const useFirebase = () => {
         setError(error.message);
       });
   };
+  useEffect(() => {
+    const unsubscribed = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser({});
+      }
+    });
+    return () => unsubscribed;
+  }, []);
   const logOut = () => {
-    signOut(auth)
-      .then(() => {
-        // Sign-out successful.
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+    signOut(auth).then(() => {});
   };
+
   return { handleGoogleLogin, user, logOut };
 };
 

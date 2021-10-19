@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import Emergency from "./components/Emergency/Emergency";
 import initializeAuthentication from "./Firebase/firebase.init";
 import NotFound from "./components/NotFound/NotFound";
+import Details from "./components/Details/Details";
 import AuthProvider from "./contexts/AuthProvider";
 
 initializeAuthentication();
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route path="/emergency">
               <Emergency></Emergency>
+            </Route>
+            <Route path="/detail/:serviceId">
+              <Details></Details>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Service({ service }) {
   return (
@@ -14,6 +15,9 @@ function Service({ service }) {
           <Card.Body>
             <Card.Title>{service.name}</Card.Title>
             <Card.Text>{service.description}</Card.Text>
+            <Link to={`/detail/${service.id}`}>
+              <button>See Details</button>
+            </Link>
           </Card.Body>
         </Card>
       </Col>
