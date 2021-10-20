@@ -1,5 +1,8 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
+import About from "../About/About";
+import Emergency from "../Emergency/Emergency";
+import Services from "../Services/Services";
 
 function Home(props) {
   return (
@@ -50,6 +53,16 @@ function Home(props) {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+
+        <div className="container">
+          <Services></Services>
+        </div>
+        <div className="container">
+          <Emergency></Emergency>
+        </div>
+        <div className="container">
+          <About></About>
+        </div>
       </div>
     </>
   );
